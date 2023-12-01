@@ -1,36 +1,3 @@
-
-def convertLine(line):
-
-    return line.replace("zero", "0").replace("one", "1").replace("two", "2").replace("three", "3").replace("four", "4").replace("five", "5").replace("six", "6").replace("seven", "7").replace("eight", "8").replace("nine", "9")
-
-
-def solution_a1():
-    sum = 0
-    str_sum = ""
-    with open("H:/AdventOfCode/1a/inp.txt", "r") as data:
-        for line in data:
-            a = ''
-            b = ''
-            str_sum = ""
-            print(line)
-
-            for char in line:
-                if (char.isdigit()):
-                    a = char
-                    break
-                
-            for char in line:
-                if (char.isdigit()):
-                    b = char
-            
-
-            str_sum = a+b
-            print (str_sum)
-
-            if (str_sum):
-                sum += int(str_sum)
-        print(sum)
-
 def checkPrev(input):
     if (input.find("zero") != -1):
         return '0'
@@ -56,17 +23,41 @@ def checkPrev(input):
     return ''
 
 
+def solution_a1():
+    sum = 0
+    str_sum = ""
+    with open("H:/AdventOfCode/AdventOfCode2023/1/inp.txt", "r") as data:
+        for line in data:
+            a = ''
+            b = ''
+            str_sum = ""
+
+            for char in line:
+                if (char.isdigit()):
+                    a = char
+                    break
+                
+            for char in line:
+                if (char.isdigit()):
+                    b = char
+            
+            str_sum = a+b
+
+            if (str_sum):
+                sum += int(str_sum)
+                    
+        return sum
+
 def solution_a2():
     sum = 0
     str_sum = ""
-    with open("H:/AdventOfCode/1a/inp.txt", "r") as data:
+    with open("H:/AdventOfCode/AdventOfCode2023/1/inp.txt", "r") as data:
         for line in data:
             a = ''
             b = ''
             tmp_a = ""
             tmp_b = ""
             str_sum = ""
-            print(line)
 
             for i in range(0, len(line), 1):
                 tmp_a = tmp_a + line[i]
@@ -89,14 +80,14 @@ def solution_a2():
                         break
 
             str_sum = a+b
-            print (str_sum)
 
             if (str_sum):
                 sum += int(str_sum)
-        print(sum)
+        return sum
 
 
 
 if __name__ == "__main__":
     
-    solution_a2()
+    print("solution task 1: ", solution_a1())
+    print("solution task 2: ", solution_a2())
